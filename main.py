@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return "This is Flask"
+    return "This is Flask \n"
 
 @app.route("/status")
 def status():
-    return "Try to get some txt files using /file"
+    return "Try to get some txt files using /file \n"
 
 @app.route("/file")
 def file():
@@ -17,9 +17,9 @@ def file():
         with open("new_file.txt","w+") as f:
             f.writelines(txt_to_write)
         f.close()
-        return "Able to write"
+        return "Able to write \n"
     except:
-        return "Unable to write"
+        return "Unable to write \n"
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
